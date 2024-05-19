@@ -1,0 +1,37 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+contract LOAN_ACCOUNT {
+    address public owner;
+    uint256 public loan = 5000; // initial loan amount
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function IterestRate(uint256 _peso) public payable {
+        require(_peso > 50, "restock should be greater than 50");
+        loan += _peso;
+    }
+
+    function MonthlyPayment(uint256 _peso) public {
+        require(_peso > 20, "sold quantity should be greater than 20");
+        require(_peso <= loan, "Not enough apples in inventory");
+
+        loan -= _peso;
+    }
+
+    function calculateNewLoan(uint256 _initialLoan, uint256 _additionalLoan) public pure returns (uint256) {
+        return _initialLoan + _additionalLoan;
+    }
+
+    function calculateRemainingLoan(uint256 _initialLoan, uint256 _soldQuantity) public pure returns (uint256) {
+        require(_soldQuantity <= _initialLoan, "Sold quantity exceeds the initial loan");
+        return _initialLoan - _soldQuantity;
+    }
+
+    function setLoan(uint256 newLoan) public {
+        require(msg.sender == owner, "Only the contract owner can update the loan");
+        loan = newLoan;
+    }
+}
