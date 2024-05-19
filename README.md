@@ -33,16 +33,16 @@ Ethereum development environment (e.g., Remix, Truffle, Hardhat).
  Decreases the loan amount by `_peso`.
  `_peso` must be greater than 20 and less than or equal to the current loan.
 
-# `calculateNewLoan(uint256 _initialLoan, uint256 _additionalLoan)`
+ `calculateNewLoan(uint256 _initialLoan, uint256 _additionalLoan)`
 
  Returns the new loan amount by adding `_additionalLoan` to `_initialLoan`.
 
-# `calculateRemainingLoan(uint256 _initialLoan, uint256 _soldQuantity)`
+ `calculateRemainingLoan(uint256 _initialLoan, uint256 _soldQuantity)`
 
  Returns the remaining loan amount by subtracting `_soldQuantity` from `_initialLoan`.
  `_soldQuantity` must be less than or equal to `_initialLoan`.
 
-# `setLoan(uint256 newLoan)`
+ `setLoan(uint256 newLoan)`
 
  Updates the loan amount to `newLoan`.
  Only the contract owner can call this function.
