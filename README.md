@@ -23,12 +23,12 @@ Ethereum development environment (e.g., Remix, Truffle, Hardhat).
 
 # Functions
 
-#`IterestRate(uint256 _peso)`
+`IterestRate(uint256 _peso)`
 
  Increases the loan amount by `_peso`.
  `_peso` must be greater than 50.
 
-# `MonthlyPayment(uint256 _peso)`
+ `MonthlyPayment(uint256 _peso)`
 
  Decreases the loan amount by `_peso`.
  `_peso` must be greater than 20 and less than or equal to the current loan.
