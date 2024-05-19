@@ -9,25 +9,23 @@ contract LOAN_ACCOUNT {
         owner = msg.sender;
     }
 
-    function IterestRate(uint256 _peso) public payable {
-        require(_peso > 50, "restock should be greater than 50");
+    function InterestRate(uint256 _peso) public payable {
+        require(_peso > 50, "interest should be greater than 50");
         loan += _peso;
     }
 
     function MonthlyPayment(uint256 _peso) public {
-        require(_peso > 20, "sold quantity should be greater than 20");
-        require(_peso <= loan, "Not enough apples in inventory");
+        require(_peso > 20, "paid should be greater than 20");
+        require(_peso <= loan, "Not enough money");
 
         loan -= _peso;
     }
-
+    function calculateRemainingLoan(uint256 _initialLoan, uint256 _paidloan) public pure returns (uint256) {
+        require(_paidloan <= _initialLoan, "Paid amount exceeds the initial loan");
+        return _initialLoan - _paidloan;
+    }
     function calculateNewLoan(uint256 _initialLoan, uint256 _additionalLoan) public pure returns (uint256) {
         return _initialLoan + _additionalLoan;
-    }
-
-    function calculateRemainingLoan(uint256 _initialLoan, uint256 _soldQuantity) public pure returns (uint256) {
-        require(_soldQuantity <= _initialLoan, "Sold quantity exceeds the initial loan");
-        return _initialLoan - _soldQuantity;
     }
 
     function setLoan(uint256 newLoan) public {
