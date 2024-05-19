@@ -23,7 +23,7 @@ Ethereum development environment (e.g., Remix, Truffle, Hardhat).
 
 # Functions
 
-`IterestRate(uint256 _peso)`
+`InterestRate(uint256 _peso)`
 
  Increases the loan amount by `_peso`.
  `_peso` must be greater than 50.
@@ -37,7 +37,7 @@ Ethereum development environment (e.g., Remix, Truffle, Hardhat).
 
  Returns the new loan amount by adding `_additionalLoan` to `_initialLoan`.
 
- `calculateRemainingLoan(uint256 _initialLoan, uint256 _soldQuantity)`
+ `calculateRemainingLoan(uint256 _initialLoan, uint256 _paidloan)`
 
  Returns the remaining loan amount by subtracting `_paidloan` from `_initialLoan`.
  `_paid` must be less than or equal to `_initialLoan`.
@@ -57,6 +57,9 @@ Interact with the Contract:
     Use `IterestRate` and `MonthlyPayment` to modify the loan.
     Use `calculateNewLoan` and `calculateRemainingLoan` for calculations.
     Use `setLoan` to update the loan amount (owner only).
+    
+# Author
+ Casidsid, Eduard A.
 
  # License
 
