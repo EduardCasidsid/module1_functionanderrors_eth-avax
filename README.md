@@ -39,8 +39,8 @@ Ethereum development environment (e.g., Remix, Truffle, Hardhat).
 
  `calculateRemainingLoan(uint256 _initialLoan, uint256 _soldQuantity)`
 
- Returns the remaining loan amount by subtracting `_soldQuantity` from `_initialLoan`.
- `_soldQuantity` must be less than or equal to `_initialLoan`.
+ Returns the remaining loan amount by subtracting `_paidloan` from `_initialLoan`.
+ `_paid` must be less than or equal to `_initialLoan`.
 
  `setLoan(uint256 newLoan)`
 
